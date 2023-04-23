@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText numE1, numE2;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addBtn = (Button) findViewById(R.id.addButton);
         addBtn.setOnClickListener(this);
         mulBtn = (Button) findViewById(R.id.mulButton);
-        subBtn.setOnClickListener(this);
+        mulBtn.setOnClickListener(this);
         subBtn = (Button) findViewById(R.id.subButton);
         subBtn.setOnClickListener(this);
         resultView = (TextView) findViewById(R.id.resultTV);
@@ -34,8 +35,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        n1 = Integer.parseInt(numE1.getText().toString());
-        n2 = Integer.parseInt(numE2.getText().toString());
+        try {
+
+            n1 = Integer.parseInt(numE1.getText().toString());
+            n2 = Integer.parseInt(numE2.getText().toString());
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(MainActivity.this, "please Enter a value", Toast.LENGTH_SHORT).show();
+        }
         switch (view.getId()){
             case R.id.addButton:
                 resultView.setText("answer is "+ (n1 + n2));
