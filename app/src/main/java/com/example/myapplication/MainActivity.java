@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText numE1, numE2;
-    Button addBtn, subBtn;
+    Button addBtn, subBtn, mulBtn;
     TextView resultView;
     int n1, n2;
 
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         addBtn = (Button) findViewById(R.id.addButton);
         addBtn.setOnClickListener(this);
+        mulBtn = (Button) findViewById(R.id.mulButton);
+        subBtn.setOnClickListener(this);
         subBtn = (Button) findViewById(R.id.subButton);
         subBtn.setOnClickListener(this);
         resultView = (TextView) findViewById(R.id.resultTV);
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.subButton:
                 resultView.setText("answer is "+ (n1 - n2));
+                break;
+            case R.id.mulButton:
+                resultView.setText("answer is "+ (n1 * n2));
                 break;
             default:
                 break;
