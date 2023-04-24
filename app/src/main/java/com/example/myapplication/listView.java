@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class listView extends AppCompatActivity {
- String items [] = new String[] {"menu1", "menu2", "menu3"};
+ String items [] = new String[] {"MainActivity", "CheckBoxAndRadioButton", "registrationActivity"};
     ListView menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
